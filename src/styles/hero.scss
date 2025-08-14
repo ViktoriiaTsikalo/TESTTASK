@@ -1,0 +1,75 @@
+@use "./variables" as *;
+
+.container-hero {
+  // Background image with dark overlay
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/img/hero/hero-1x.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 40px 16px 71px;
+  margin-top: 60px;
+
+  // High-resolution background for retina/2x displays
+  @media screen and (min-resolution: 192dpi),
+    (min-resolution: 2dppx),
+    (-webkit-min-device-pixel-ratio: 2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/img/hero/hero-2x.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  // Hero title
+  h1 {
+    font-size: 40px;
+    line-height: 100%;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 21px;
+  }
+
+  // Hero description text
+  p {
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  // Hero button
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 34px;
+    border-radius: 80px;
+    background: $primary;
+    margin: 0 auto;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #ffe302; // Hover effect
+    }
+  }
+
+  // Responsive adjustments for tablet
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 89px 194px 88px;
+  }
+
+  // Responsive adjustments for small desktop
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding: 164px 322px 163px;
+  }
+
+  // Responsive adjustments for large desktop
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    padding: 164px 395px 163px;
+  }
+}

@@ -1,0 +1,52 @@
+@use "./variables" as *;
+
+.container-header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 13px 0;
+    height: 60px;
+    width: 100%;
+
+    ul {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
+
+      // Logo list item: aligned to the left
+      li:first-child {
+        margin-right: auto;
+        a {
+          display: flex;
+          svg {
+            height: 26px;
+            width: 104px; // Fixed width to match logo design
+          }
+        }
+      }
+
+      // Navigation buttons
+      li:not(:first-child) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 34px;
+        border-radius: 80px;
+        background: $primary;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #ffe302; // Hover effect for buttons
+        }
+      }
+    }
+  }
+}

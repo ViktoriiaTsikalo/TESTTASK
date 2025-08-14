@@ -1,0 +1,58 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+@use "./styles/reset" as *;
+
+// Container (responsive layout wrapper)
+.container {
+  max-width: $bp-mobile; // base max width for mobile devices
+  margin: 0 auto; // center container horizontally
+  padding: 0 16px; // default horizontal padding
+  @include respond(tablet) {
+    max-width: $bp-tablet; // adjust max width for tablets
+    padding: 0 32px; // increase padding on larger screens
+  }
+  @include respond(desktop) {
+    max-width: $bp-desktop; // adjust for desktop breakpoint
+    padding: 0 60px;
+  }
+  @include respond(large) {
+    max-width: $bp-large; // largest container width
+    padding: 0; // remove horizontal padding for large layouts
+  }
+}
+
+// Body defaults
+body {
+  font-family: $font-family; // global font family
+  font-size: 16px; // base font size
+  line-height: 1.62; // default line height for readability
+  text-align: center; // center-align all text by default
+  color: $black-87; // main text color
+  background: $background; // global background color
+}
+
+html {
+  scroll-behavior: smooth; // enable smooth scrolling for anchor links
+}
+
+// Alternative container with fixed breakpoints using raw media queries
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px; // default padding for mobile
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding: 0 60px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+    padding: 0 80px;
+  }
+}

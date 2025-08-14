@@ -1,0 +1,79 @@
+@use "./variables" as *;
+
+.users-wrapper {
+  // Vertical padding for the section
+  padding: 140px 0;
+
+  // Section title
+  h2 {
+    line-height: 100%;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+
+  // User list container
+  ul {
+    display: flex;
+    flex-wrap: wrap; // Allow cards to wrap
+    margin-bottom: 50px;
+    gap: 20px;
+  }
+
+  // Each user card
+  li {
+    width: 100%; // Full width on mobile
+  }
+
+  // Pagination buttons container
+  .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    // Button styling
+    button {
+      border-radius: 80px;
+      background: $primary;
+      border: none;
+      width: 120px;
+      height: 34px;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 162%;
+      text-align: center;
+      color: $black-87;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #ffe302; // Hover effect
+      }
+    }
+  }
+
+  // Tablet layout
+  @media (min-width: 768px) {
+    ul {
+      gap: 16px;
+    }
+
+    li {
+      width: calc((100% - 16px) / 2); // Two cards per row
+    }
+  }
+
+  // Desktop layout
+  @media (min-width: 1024px) {
+    ul {
+      gap: 29px;
+    }
+
+    li {
+      width: calc((100% - 58px) / 3); // Three cards per row
+    }
+  }
+}
